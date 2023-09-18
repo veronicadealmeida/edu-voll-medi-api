@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.domain.paciente.DadosListagemPaciente;
@@ -16,7 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/pacientes")
-@CrossOrigin(origins = "*", maxAge = 3600)
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired

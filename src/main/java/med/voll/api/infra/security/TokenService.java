@@ -42,7 +42,7 @@ public class TokenService {
                     .getSubject();
 
         }catch (JWTCreationException exception) {
-            throw new RuntimeException("Token JWT iinválido ou expirado");
+            throw new RuntimeException("Token JWT inválido ou expirado");
         }
     }
 

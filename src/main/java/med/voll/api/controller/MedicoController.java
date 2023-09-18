@@ -16,7 +16,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 
 @RestController
-@RequestMapping("medicos")
+@RequestMapping("/medicos")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class MedicoController {
 
     @Autowired

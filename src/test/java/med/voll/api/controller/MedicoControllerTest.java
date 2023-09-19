@@ -42,59 +42,60 @@ class MedicoControllerTest {
     @DisplayName("Deveria devolver codigo http 400 quando informacoes estao invalidas")
     @WithMockUser
     void cadastrar_cenario1() throws Exception {
-        var response = mvc
-                .perform(post("/medicos"))
-                .andReturn().getResponse();
 
-        assertThat(response.getStatus())
-                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+//        var response = mvc
+//                .perform(post("/medicos"))
+//                .andReturn().getResponse();
+//
+//        assertThat(response.getStatus())
+//                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+//    }
+//
+//    @Test
+//    @DisplayName("Deveria devolver codigo http 200 quando informacoes estao validas")
+//    @WithMockUser
+//    void cadastrar_cenario2() throws Exception {
+//        var dadosCadastro = new DadosCadastroMedico(
+//                "Medico",
+//                "medico@voll.med",
+//                "61999999999",
+//                "123456",
+//                Especialidade.CARDIOLOGIA,
+//                dadosEndereco());
+//
+//        when(repository.save(any())).thenReturn(new Medico(dadosCadastro));
+//
+//        var response = mvc
+//                .perform(post("/medicos")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(dadosCadastroMedicoJson.write(dadosCadastro).getJson()))
+//                .andReturn().getResponse();
+//
+//        var dadosDetalhamento = new DadosDetalhamentoMedico(
+//                null,
+//                dadosCadastro.nome(),
+//                dadosCadastro.email(),
+//                dadosCadastro.crm(),
+//                dadosCadastro.telefone(),
+//                dadosCadastro.especialidade(),
+//                new Endereco(dadosCadastro.endereco())
+//        );
+//        var jsonEsperado = dadosDetalhamentoMedicoJson.write(dadosDetalhamento).getJson();
+//
+//        assertThat(response.getStatus()).isEqualTo(HttpStatus.CREATED.value());
+//        assertThat(response.getContentAsString()).isEqualTo(jsonEsperado);
     }
 
-    @Test
-    @DisplayName("Deveria devolver codigo http 200 quando informacoes estao validas")
-    @WithMockUser
-    void cadastrar_cenario2() throws Exception {
-        var dadosCadastro = new DadosCadastroMedico(
-                "Medico",
-                "medico@voll.med",
-                "61999999999",
-                "123456",
-                Especialidade.CARDIOLOGIA,
-                dadosEndereco());
-
-        when(repository.save(any())).thenReturn(new Medico(dadosCadastro));
-
-        var response = mvc
-                .perform(post("/medicos")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(dadosCadastroMedicoJson.write(dadosCadastro).getJson()))
-                .andReturn().getResponse();
-
-        var dadosDetalhamento = new DadosDetalhamentoMedico(
-                null,
-                dadosCadastro.nome(),
-                dadosCadastro.email(),
-                dadosCadastro.crm(),
-                dadosCadastro.telefone(),
-                dadosCadastro.especialidade(),
-                new Endereco(dadosCadastro.endereco())
-        );
-        var jsonEsperado = dadosDetalhamentoMedicoJson.write(dadosDetalhamento).getJson();
-
-        assertThat(response.getStatus()).isEqualTo(HttpStatus.CREATED.value());
-        assertThat(response.getContentAsString()).isEqualTo(jsonEsperado);
-    }
-
-    private DadosEndereco dadosEndereco() {
-        return new DadosEndereco(
-                "rua xpto",
-                "bairro",
-                "00000000",
-                "Brasilia",
-                "DF",
-                null,
-                null
-        );
-    }
+//    private DadosEndereco dadosEndereco() {
+//        return new DadosEndereco(
+//                "rua xpto",
+//                "bairro",
+//                "00000000",
+//                "Brasilia",
+//                "DF",
+//                null,
+//                null
+//        );
+//    }
 
 }

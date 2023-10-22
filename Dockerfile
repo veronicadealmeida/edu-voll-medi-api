@@ -12,6 +12,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 9090
 
-COPY --from=build /target/api-1.0.0.jar
+COPY --from=build /target/api-1.0.0.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar"]

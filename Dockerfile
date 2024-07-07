@@ -10,7 +10,7 @@ RUN mvn clean install
 
 FROM openjdk:17-jdk-slim
 
-EXPOSE 9090
+EXPOSE 8080
 
 COPY --from=build /target/api-1.0.0.jar app.jar
 
